@@ -1,0 +1,13 @@
+<%= link_to "new todo", new_todo_path %>
+<% @todo_list_names.each do |list| %>
+  <h2><%= list %><%= todo_by_list(list).count %></h2>
+  <ul>
+    <% todo_by_list(list).each do |todo| %>
+      <li><%= link_to "#{todo.title}: #{todo.body}",todo %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+
